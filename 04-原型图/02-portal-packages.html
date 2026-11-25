@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>体检套餐门户</title><link rel="stylesheet" href="mock.css">
+<style>
+.hero{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px 24px;margin-bottom:16px}
+.hero h1{font-size:18px;color:var(--primary)}
+.hero p{font-size:13px;color:var(--text-2);margin-top:6px}
+.filters{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:16px}
+.pkgs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.meta{display:flex;gap:10px;font-size:12px;color:var(--text-3);margin:8px 0 10px;flex-wrap:wrap}
+.foot{display:flex;align-items:center;margin-top:10px}
+.foot .btn{margin-left:auto}
+</style></head><body>
+<div class="portal-top"><div class="logo"><span style="width:18px;height:18px;border:2px solid #237A8B;border-radius:4px;display:inline-block"></span> 康检通体检中心</div>
+<div class="nav"><a class="on">体检套餐</a><a>我的预约</a><a>我的报告</a><a>体检须知</a></div>
+<div class="right" style="margin-left:auto;display:flex;align-items:center;gap:14px;font-size:13px;color:var(--text-2)">消息 <span class="avatar">张</span></div></div>
+<div class="portal-wrap">
+  <div class="hero">
+    <h1>选择适合您的体检套餐</h1>
+    <p>2026 年度个人健康体检开放预约，可预约未来 30 天内的上午时段。团检请由企业联络员统一建批。</p>
+    <div class="filters">
+      <select class="select"><option>全部人群</option><option>入职体检</option><option>中青年常规</option><option>中老年深度</option><option>女性专项</option></select>
+      <select class="select"><option>价格不限</option><option>300 元以下</option><option>300-800 元</option><option>800 元以上</option></select>
+      <select class="select"><option>全部科室</option><option>内科</option><option>影像科</option><option>检验科</option></select>
+      <input class="input" style="width:260px" placeholder="搜索套餐名称 / 编号">
+      <button class="btn primary">查询</button>
+      <button class="btn">重置</button>
+    </div>
+  </div>
+  <div class="pkgs">
+    <div class="pkg-card"><div class="cover">套餐封面 · 入职体检基础</div><div class="body">
+      <h4>入职体检基础套餐</h4>
+      <div class="meta"><span>适用：18-45 岁</span><span>12 个项目</span><span>约 60 分钟</span></div>
+      <div class="price">¥ 268 <s>¥ 320</s></div>
+      <div class="foot"><span class="tag green">可预约</span><button class="btn sm primary">立即预约</button></div></div></div>
+    <div class="pkg-card"><div class="cover">套餐封面 · 中青年常规</div><div class="body">
+      <h4>中青年常规体检 A</h4>
+      <div class="meta"><span>适用：25-50 岁</span><span>18 个项目</span><span>约 90 分钟</span></div>
+      <div class="price">¥ 586 <s>¥ 698</s></div>
+      <div class="foot"><span class="tag green">可预约</span><button class="btn sm primary">立即预约</button></div></div></div>
+    <div class="pkg-card"><div class="cover">套餐封面 · 中老年深度</div><div class="body">
+      <h4>中老年深度筛查套餐</h4>
+      <div class="meta"><span>适用：50 岁以上</span><span>26 个项目</span><span>约 150 分钟</span></div>
+      <div class="price">¥ 1280 <s>¥ 1520</s></div>
+      <div class="foot"><span class="tag orange">名额紧张</span><button class="btn sm primary">立即预约</button></div></div></div>
+    <div class="pkg-card"><div class="cover">套餐封面 · 女性专项</div><div class="body">
+      <h4>女性专项筛查套餐</h4>
+      <div class="meta"><span>适用：25-55 岁女性</span><span>21 个项目</span><span>约 110 分钟</span></div>
+      <div class="price">¥ 960 <s>¥ 1100</s></div>
+      <div class="foot"><span class="tag green">可预约</span><button class="btn sm primary">立即预约</button></div></div></div>
+  </div>
+  <div class="panel" style="margin-top:20px">
+    <div class="panel-h"><h3>套餐明细对照</h3><div class="sub">点击「预约」进入时段选择</div></div>
+    <table><thead><tr><th>套餐编号</th><th>套餐名称</th><th>适用人群</th><th>重点项目</th><th>执行科室</th><th>原价</th><th>优惠价</th><th>上架期</th><th>状态</th><th>操作</th></tr></thead>
+    <tbody>
+      <tr><td class="num">PKG-2026-001</td><td>入职体检基础套餐</td><td>18-45 岁</td><td>肝功、血常规、胸片</td><td>检验科 / 影像科</td><td class="num">320.00</td><td class="num">268.00</td><td class="num">2026-01-01 ~ 2026-12-31</td><td><span class="tag green">已上架</span></td><td class="nowrap"><button class="btn link">详情</button><button class="btn link">预约</button></td></tr>
+      <tr><td class="num">PKG-2026-002</td><td>中青年常规体检 A</td><td>25-50 岁</td><td>肝肾功、血脂、腹部彩超</td><td>内科 / 影像科</td><td class="num">698.00</td><td class="num">586.00</td><td class="num">2026-01-01 ~ 2026-12-31</td><td><span class="tag green">已上架</span></td><td class="nowrap"><button class="btn link">详情</button><button class="btn link">预约</button></td></tr>
+      <tr><td class="num">PKG-2026-003</td><td>中老年深度筛查套餐</td><td>50 岁以上</td><td>肿瘤标志物、颈动脉彩超、CT</td><td>影像科</td><td class="num">1520.00</td><td class="num">1280.00</td><td class="num">2026-03-01 ~ 2026-12-31</td><td><span class="tag orange">名额紧张</span></td><td class="nowrap"><button class="btn link">详情</button><button class="btn link">预约</button></td></tr>
+      <tr><td class="num">PKG-2026-004</td><td>女性专项筛查套餐</td><td>25-55 岁女性</td><td>乳腺彩超、妇科检查、TCT</td><td>妇科 / 影像科</td><td class="num">1100.00</td><td class="num">960.00</td><td class="num">2026-02-01 ~ 2026-12-31</td><td><span class="tag green">已上架</span></td><td class="nowrap"><button class="btn link">详情</button><button class="btn link">预约</button></td></tr>
+    </tbody></table>
+    <div class="pager"><span>共 16 条</span><span class="pg">‹</span><span class="pg on">1</span><span class="pg">2</span><span class="pg">3</span><span class="pg">›</span><select class="select" style="width:110px;height:28px;margin-left:8px"><option>10 条/页</option><option>20 条/页</option></select></div>
+  </div>
+</div>
+</body></html>

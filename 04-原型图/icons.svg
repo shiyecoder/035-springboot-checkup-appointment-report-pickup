@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-dashboard" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M4 13h6V4H4v9Zm0 7h6v-4H4v4Zm10 0h6v-9h-6v9Zm0-16v4h6V4h-6Z"/></symbol>
+  <symbol id="i-package" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M3 8.5 12 4l9 4.5v7L12 20l-9-4.5v-7Zm0 0 9 4.5m0 0 9-4.5M12 13v7"/></symbol>
+  <symbol id="i-item" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M9 4h6v3H9V4Zm-3 3h12v13H6V7Zm3 4h6m-6 4h4"/></symbol>
+  <symbol id="i-slot" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M4 6h16v14H4V6Zm0 4h16M8 3v4m8-4v4"/></symbol>
+  <symbol id="i-appoint" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M7 3h10v18l-5-3-5 3V3Z"/></symbol>
+  <symbol id="i-group" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7 0a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM3 20v-2a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v2m1-7h1a4 4 0 0 1 4 4v3"/></symbol>
+  <symbol id="i-report" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M6 3h9l4 4v14H6V3Zm8 0v5h5M9 13h6m-6 4h4"/></symbol>
+  <symbol id="i-pickup" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M5 8h14l-1.5 12h-11L5 8Zm3 0V6a4 4 0 0 1 8 0v2"/></symbol>
+  <symbol id="i-rule" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M5 5h14M5 12h14M5 19h14M9 5v14m6-14v14"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-8 8a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M4 5h16v11H9l-5 4V5Z"/></symbol>
+  <symbol id="i-checkin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M4 12l5 5L20 6"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M3 7h18v10H3V7Zm0 4h18M7 15h3"/></symbol>
+</svg>

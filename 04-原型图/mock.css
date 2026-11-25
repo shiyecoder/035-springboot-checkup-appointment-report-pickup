@@ -1,0 +1,130 @@
+/* 体检预约与报告领取管理系统 · 设计基线（公共服务蓝） */
+:root{
+  --primary:#15344A; --secondary:#237A8B; --bg:#F3F7F8; --accent:#2D5B6B;
+  --success:#2D7A58; --danger:#B03035; --warn:#B4761F;
+  --text:#1C2B33; --text-2:#5A6B74; --text-3:#8C9AA3;
+  --line:#DCE5E9; --white:#fff;
+  --r:6px; --r-lg:8px;
+  --sh:0 6px 24px rgba(21,52,74,.12);
+  --font:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:"SF Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14px;line-height:1.55}
+a{color:var(--accent);text-decoration:none}
+.num{font-variant-numeric:tabular-nums;font-family:var(--mono)}
+
+/* 布局：220px 侧栏 + 56px 顶栏 */
+.layout{display:flex;min-height:100vh}
+.side{width:220px;background:var(--primary);color:#c9d8e0;display:flex;flex-direction:column;flex:none}
+.side .brand{height:56px;display:flex;align-items:center;gap:10px;padding:0 18px;border-bottom:1px solid rgba(255,255,255,.1);color:#fff;font-weight:600;font-size:15px}
+.side .brand .dot{width:8px;height:8px;border-radius:50%;background:#4FB3C4}
+.side nav{padding:10px 0;flex:1;overflow:auto}
+.side .grp{padding:14px 18px 6px;font-size:11px;letter-spacing:.08em;color:#7d94a1}
+.side a{display:flex;align-items:center;gap:10px;height:40px;padding:0 18px;color:#c9d8e0;font-size:13.5px}
+.side a:hover{background:rgba(255,255,255,.06);color:#fff}
+.side a.on{background:var(--secondary);color:#fff;border-left:3px solid #7FD4E3;padding-left:15px}
+.side .ico{width:16px;text-align:center;opacity:.9}
+.main{flex:1;display:flex;flex-direction:column;min-width:0}
+.top{height:56px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 24px;gap:12px}
+.crumb{font-size:13px;color:var(--text-2)}
+.crumb b{color:var(--text);font-weight:500}
+.top .right{margin-left:auto;display:flex;align-items:center;gap:16px;font-size:13px;color:var(--text-2)}
+.avatar{width:28px;height:28px;border-radius:50%;background:var(--secondary);color:#fff;display:grid;place-items:center;font-size:12px}
+.content{padding:24px;flex:1}
+
+/* 卡片 / 面板 */
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px}
+.panel-h{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.panel-h h3{font-size:15px;font-weight:600}
+.panel-h .sub{font-size:12px;color:var(--text-3)}
+.panel-h .right{margin-left:auto;display:flex;gap:8px}
+.grid{display:grid;gap:16px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:1fr 1fr}
+.g6{grid-template-columns:repeat(6,1fr)}
+
+/* 按钮 */
+.btn{height:32px;padding:0 14px;border:1px solid var(--line);background:#fff;color:var(--text);border-radius:var(--r);cursor:pointer;font-size:13px;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{border-color:var(--secondary);color:var(--secondary)}
+.btn.primary{background:var(--primary);border-color:var(--primary);color:#fff}
+.btn.primary:hover{background:#1d445e}
+.btn.ghost{border-color:var(--secondary);color:var(--secondary);background:#fff}
+.btn.danger{border-color:var(--danger);color:var(--danger);background:#fff}
+.btn.sm{height:26px;padding:0 10px;font-size:12px}
+.btn.link{border:0;background:none;color:var(--accent);padding:0 4px;height:auto}
+
+/* 表单 */
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:12.5px;color:var(--text-2)}
+.field label .req{color:var(--danger)}
+.input,.select{height:34px;border:1px solid var(--line);border-radius:var(--r);padding:0 10px;font-size:13px;background:#fff;font-family:inherit;color:var(--text)}
+.input:focus,.select:focus{outline:0;border-color:var(--secondary)}
+.select{width:200px}
+.form-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.label-w{width:110px;color:var(--text-2);font-size:13px;text-align:right;flex:none}
+
+/* 表格 */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#F7FAFB;color:var(--text-2);font-weight:500;text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:11px 12px;border-bottom:1px solid #EDF2F4;vertical-align:middle}
+tbody tr:hover{background:#FAFCFD}
+td.nowrap,th.nowrap{white-space:nowrap}
+
+/* 标签 */
+.tag{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 8px;border-radius:4px;font-size:12px;border:1px solid}
+.tag.blue{color:var(--accent);border-color:#BBD3DC;background:#EEF5F7}
+.tag.green{color:var(--success);border-color:#B7DCCC;background:#EDF7F1}
+.tag.orange{color:var(--warn);border-color:#EBD3A8;background:#FBF4E6}
+.tag.red{color:var(--danger);border-color:#E6BFC0;background:#FBEEEE}
+.tag.gray{color:var(--text-2);border-color:var(--line);background:#F4F7F8}
+
+/* 指标 */
+.metric{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:14px 16px}
+.metric .k{font-size:12px;color:var(--text-2)}
+.metric .v{font-size:24px;font-weight:600;color:var(--primary);margin-top:4px;font-family:var(--mono)}
+.metric .d{font-size:11.5px;color:var(--text-3);margin-top:2px}
+.metric .d.up{color:var(--success)}
+
+/* 时间轴 */
+.tl{position:relative;padding-left:18px}
+.tl:before{content:"";position:absolute;left:5px;top:4px;bottom:4px;width:1px;background:var(--line)}
+.tl li{list-style:none;position:relative;padding:0 0 16px 0}
+.tl li:before{content:"";position:absolute;left:-16px;top:5px;width:7px;height:7px;border-radius:50%;background:var(--secondary);box-shadow:0 0 0 3px #EEF5F7}
+.tl .t{font-size:12px;color:var(--text-3);font-family:var(--mono)}
+.tl .b{font-size:13px;margin-top:2px}
+
+/* 分页 */
+.pager{display:flex;align-items:center;justify-content:flex-end;gap:8px;padding-top:14px;font-size:13px;color:var(--text-2)}
+.pager .pg{min-width:28px;height:28px;border:1px solid var(--line);border-radius:4px;display:grid;place-items:center;background:#fff}
+.pager .pg.on{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+/* 门户（用户端）风格区分：浅色顶栏 + 横向导航 */
+.portal-top{height:64px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 32px;gap:28px}
+.portal-top .logo{font-size:16px;font-weight:600;color:var(--primary);display:flex;align-items:center;gap:8px}
+.portal-top .nav{display:flex;gap:22px;font-size:13.5px;color:var(--text-2)}
+.portal-top .nav a.on{color:var(--secondary);font-weight:500;border-bottom:2px solid var(--secondary);padding-bottom:4px}
+.portal-wrap{max-width:1180px;margin:0 auto;padding:24px 32px 48px}
+.pkg-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.pkg-card .cover{height:132px;background:linear-gradient(135deg,#DDE9EC,#EEF4F6);display:grid;place-items:center;color:#9FB4BD;font-size:12px}
+.pkg-card .body{padding:14px 16px}
+.pkg-card h4{font-size:14.5px;margin-bottom:6px}
+.pkg-card .price{color:var(--danger);font-size:18px;font-weight:600;font-family:var(--mono)}
+.pkg-card .price s{color:var(--text-3);font-size:12px;font-weight:400;margin-left:6px}
+
+/* 抽屉 / 弹窗 */
+.mask{position:fixed;inset:0;background:rgba(21,52,74,.34);display:grid;place-items:center;z-index:20}
+.modal{width:520px;background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh);overflow:hidden}
+.modal .h{padding:16px 20px;border-bottom:1px solid var(--line);font-weight:600}
+.modal .b{padding:20px}
+.modal .f{padding:14px 20px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:10px}
+
+/* 图表占位（mock 用 CSS 绘制） */
+.bars{display:flex;align-items:flex-end;gap:12px;height:150px;padding-top:8px}
+.bars .b{flex:1;background:linear-gradient(180deg,#3E8FA0,#237A8B);border-radius:3px 3px 0 0;position:relative}
+.bars .b span{position:absolute;bottom:-20px;left:0;right:0;text-align:center;font-size:11px;color:var(--text-3)}
+.donut{width:120px;height:120px;border-radius:50%;background:conic-gradient(var(--primary) 0 42%,var(--secondary) 42% 68%,#7FA9B4 68% 86%,#C9D8DE 86% 100%);position:relative;margin:0 auto}
+.donut:after{content:"";position:absolute;inset:26px;background:#fff;border-radius:50%}
+.line-chart{height:150px;position:relative;background:linear-gradient(180deg,rgba(35,122,139,.06),transparent)}
+.line-chart svg{width:100%;height:100%}

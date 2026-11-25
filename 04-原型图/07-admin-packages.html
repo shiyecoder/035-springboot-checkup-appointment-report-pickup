@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>套餐管理</title><link rel="stylesheet" href="mock.css">
+<style>
+.filters{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.thumbs{display:flex;gap:6px}
+.thumb{width:52px;height:38px;border-radius:4px;border:1px solid var(--line);background:linear-gradient(135deg,#DDE9EC,#EEF4F6);display:grid;place-items:center;font-size:10px;color:#8FA7B0}
+</style></head><body>
+<div class="layout">
+  <aside class="side">
+    <div class="brand"><span class="dot"></span> 体健康教育管理</div>
+    <nav>
+      <div class="grp">概览</div><a><span class="ico">▤</span> 运营看板</a>
+      <div class="grp">主数据</div>
+      <a class="on"><span class="ico">◇</span> 体检套餐</a><a><span class="ico">◈</span> 检查项目</a>
+      <a><span class="ico">▣</span> 时段容量</a><a><span class="ico">◉</span> 体检机构</a>
+      <div class="grp">业务</div><a><span class="ico">▷</span> 预约管理</a><a><span class="ico">◎</span> 团检管理</a>
+      <a><span class="ico">▦</span> 报告归档</a><a><span class="ico">◐</span> 报告领取</a>
+      <div class="grp">创新模块</div><a><span class="ico">⚙</span> 拥挤度规则</a><a><span class="ico">▥</span> 计算留痕</a>
+      <div class="grp">系统</div><a><span class="ico">☰</span> 菜单管理</a><a><span class="ico">◫</span> 角色管理</a><a><span class="ico">☺</span> 用户管理</a>
+    </nav>
+  </aside>
+  <div class="main">
+    <div class="top"><div class="crumb">主数据 / <b>体检套餐</b></div><div class="right"><span>消息 12</span><span class="avatar">管</span></div></div>
+    <div class="content">
+      <div class="panel">
+        <div class="panel-h"><h3>体检套餐</h3><div class="sub">共 16 条 · 已上架 13 · 草稿 2 · 下架 1</div>
+          <div class="right"><button class="btn">导出当前筛选</button><button class="btn primary">+ 新建套餐</button></div></div>
+        <div class="filters">
+          <input class="input" style="width:220px" placeholder="套餐编号 / 名称">
+          <select class="select"><option>全部适用人群</option><option>入职体检</option><option>中青年</option><option>中老年</option><option>女性专项</option></select>
+          <select class="select"><option>全部状态</option><option>已上架</option><option>草稿</option><option>已下架</option></select>
+          <select class="select"><option>全部科室</option><option>内科</option><option>影像科</option><option>检验科</option></select>
+          <button class="btn primary">查询</button><button class="btn">重置</button>
+        </div>
+        <table><thead><tr><th>封面</th><th>套餐编号</th><th>套餐名称</th><th>适用人群</th><th>检查项目</th><th>执行科室</th><th>原价</th><th>优惠价</th><th>预计时长</th><th>上架期</th><th>状态</th><th>操作</th></tr></thead>
+        <tbody>
+          <tr><td><div class="thumbs"><div class="thumb">封面</div></div></td><td class="num">PKG-2026-001</td><td>入职体检基础套餐</td><td>18-45 岁</td><td class="num">12 项</td><td>检验科 / 影像科</td><td class="num">320.00</td><td class="num">268.00</td><td class="num">60 分钟</td><td class="num">2026-01-01 ~ 12-31</td><td><span class="tag green">已上架</span></td><td class="nowrap"><button class="btn link">详情</button><button class="btn link">编辑</button><button class="btn link">更多</button></td></tr>
+          <tr><td><div class="thumbs"><div class="thumb">封面</div></div></td><td class="num">PKG-2026-002</td><td>中青年常规体检 A</td><td>25-50 岁</td><td class="num">18 项</td><td>内科 / 影像科</td><td class="num">698.00</td><td class="num">586.00</td><td class="num">90 分钟</td><td class="num">2026-01-01 ~ 12-31</td><td><span class="tag green">已上架</span></td><td class="nowrap"><button class="btn link">详情</button><button class="btn link">编辑</button><button class="btn link">更多</button></td></tr>
+          <tr><td><div class="thumbs"><div class="thumb">封面</div></div></td><td class="num">PKG-2026-003</td><td>中老年深度筛查套餐</td><td>50 岁以上</td><td class="num">26 项</td><td>影像科</td><td class="num">1520.00</td><td class="num">1280.00</td><td class="num">150 分钟</td><td class="num">2026-03-01 ~ 12-31</td><td><span class="tag green">已上架</span></td><td class="nowrap"><button class="btn link">详情</button><button class="btn link">编辑</button><button class="btn link">更多</button></td></tr>
+          <tr><td><div class="thumbs"><div class="thumb">封面</div></div></td><td class="num">PKG-2026-004</td><td>女性专项筛查套餐</td><td>25-55 岁女性</td><td class="num">21 项</td><td>妇科 / 影像科</td><td class="num">1100.00</td><td class="num">960.00</td><td class="num">110 分钟</td><td class="num">2026-02-01 ~ 12-31</td><td><span class="tag green">已上架</span></td><td class="nowrap"><button class="btn link">详情</button><button class="btn link">编辑</button><button class="btn link">更多</button></td></tr>
+          <tr><td><div class="thumbs"><div class="thumb">封面</div></div></td><td class="num">PKG-2026-005</td><td>团检基础套餐（企业）</td><td>18-60 岁</td><td class="num">14 项</td><td>检验科</td><td class="num">420.00</td><td class="num">350.00</td><td class="num">75 分钟</td><td class="num">2026-04-01 ~ 12-31</td><td><span class="tag gray">草稿</span></td><td class="nowrap"><button class="btn link">详情</button><button class="btn link">编辑</button><button class="btn link">更多</button></td></tr>
+        </tbody></table>
+        <div class="pager"><span>共 16 条</span><span class="pg">‹</span><span class="pg on">1</span><span class="pg">2</span><span class="pg">›</span><select class="select" style="width:110px;height:28px"><option>10 条/页</option><option>20 条/页</option><option>50 条/页</option></select></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

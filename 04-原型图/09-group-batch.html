@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>团检批次与名单导入</title><link rel="stylesheet" href="mock.css">
+<style>
+.imp{border:1px dashed var(--line);border-radius:8px;padding:22px;text-align:center;background:#FAFCFD}
+.imp b{display:block;font-size:13.5px;color:var(--text)}
+.imp p{font-size:12px;color:var(--text-3);margin:6px 0 12px}
+.err{background:#FBEEEE;border:1px solid #E6BFC0;border-radius:6px;padding:10px 14px;font-size:12.5px;color:#7A2226;margin-top:12px;line-height:1.8}
+</style></head><body>
+<div class="layout">
+  <aside class="side">
+    <div class="brand"><span class="dot"></span> 企业团检服务</div>
+    <nav>
+      <div class="grp">企业联络员</div>
+      <a class="on"><span class="ico">◎</span> 团检批次</a>
+      <a><span class="ico">▤</span> 名单导入</a>
+      <a><span class="ico">◔</span> 集合统计</a>
+      <div class="grp">其他</div><a><span class="ico">☺</span> 个人中心</a><a><span class="ico">✉</span> 消息中心</a>
+    </nav>
+  </aside>
+  <div class="main">
+    <div class="top"><div class="crumb">团检 / <b>团检批次</b></div><div class="right"><span>企业联络员 · 陈静</span><span class="avatar">陈</span></div></div>
+    <div class="content">
+      <div class="panel" style="margin-bottom:16px">
+        <div class="panel-h"><h3>团检批次</h3><div class="sub">仅可查看到检与完成统计，不可下载个人体检报告</div>
+          <div class="right"><button class="btn">导入名单</button><button class="btn primary">+ 新建批次</button></div></div>
+        <table><thead><tr><th>批次编号</th><th>企业名称</th><th>套餐</th><th>体检日期</th><th>名额</th><th>已报名</th><th>已到检</th><th>状态</th><th>操作</th></tr></thead>
+        <tbody>
+          <tr><td class="num">GB-2026-011</td><td>华远建设集团</td><td>团检基础套餐（企业）</td><td class="num">2026-11-05 ~ 2026-11-20</td><td class="num">120</td><td class="num">118</td><td class="num">0</td><td><span class="tag blue">待到检</span></td><td class="nowrap"><button class="btn link">详情</button><button class="btn link">名单</button><button class="btn link">统计</button></td></tr>
+          <tr><td class="num">GB-2026-009</td><td>启明软件有限公司</td><td>中青年常规体检 A</td><td class="num">2026-10-08 ~ 2026-10-22</td><td class="num">80</td><td class="num">76</td><td class="num">71</td><td><span class="tag green">已完成</span></td><td class="nowrap"><button class="btn link">详情</button><button class="btn link">名单</button><button class="btn link">统计</button></td></tr>
+          <tr><td class="num">GB-2026-007</td><td>市第一人民医院后勤处</td><td>入职体检基础套餐</td><td class="num">2026-08-12 ~ 2026-08-30</td><td class="num">45</td><td class="num">45</td><td class="num">43</td><td><span class="tag green">已完成</span></td><td class="nowrap"><button class="btn link">详情</button><button class="btn link">名单</button><button class="btn link">统计</button></td></tr>
+        </tbody></table>
+        <div class="pager"><span>共 6 条</span><span class="pg on">1</span></div>
+      </div>
+      <div class="grid g2">
+        <div class="panel">
+          <div class="panel-h"><h3>Excel 名单导入 · GB-2026-011</h3></div>
+          <div class="imp"><b>拖拽 Excel 到此处，或点击选择文件</b><p>支持 .xlsx / .xls，单次不超过 500 行；模板列：姓名、性别、年龄、手机号、身份证号、套餐编号</p><button class="btn ghost">下载导入模板</button></div>
+          <div class="err">导入结果：成功 115 行，失败 3 行<br>
+            第 18 行：身份证号校验位错误（11010119900307XXXX）<br>
+            第 42 行：手机号格式不合法（13826621）<br>
+            第 77 行：套餐编号 PKG-2026-099 不存在</div>
+          <div style="font-size:12px;color:var(--text-3);margin-top:10px">失败行不影响成功行入库，可修正后仅重传失败行。</div>
+        </div>
+        <div class="panel">
+          <div class="panel-h"><h3>集合统计 · GB-2026-011</h3><div class="sub">华远建设集团</div></div>
+          <div class="grid g3" style="margin-bottom:14px">
+            <div class="metric"><div class="k">报名人数</div><div class="v">118</div></div>
+            <div class="metric"><div class="k">已到检</div><div class="v">0</div></div>
+            <div class="metric"><div class="k">待补检</div><div class="v">0</div></div>
+          </div>
+          <table><thead><tr><th>日期</th><th>时段</th><th>预约人数</th><th>名额</th><th>负载</th></tr></thead><tbody>
+            <tr><td class="num">2026-11-05</td><td class="num">07:30-09:00</td><td class="num">32</td><td class="num">40</td><td><span class="tag green">80%</span></td></tr>
+            <tr><td class="num">2026-11-05</td><td class="num">09:00-10:30</td><td class="num">28</td><td class="num">40</td><td><span class="tag orange">70%</span></td></tr>
+            <tr><td class="num">2026-11-06</td><td class="num">07:30-09:00</td><td class="num">36</td><td class="num">40</td><td><span class="tag red">90%</span></td></tr>
+            <tr><td class="num">2026-11-06</td><td class="num">09:00-10:30</td><td class="num">22</td><td class="num">40</td><td><span class="tag green">55%</span></td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

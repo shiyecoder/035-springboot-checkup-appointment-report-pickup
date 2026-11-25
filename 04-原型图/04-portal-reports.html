@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>我的预约与报告</title><link rel="stylesheet" href="mock.css">
+<style>
+.tabs{display:flex;gap:6px;margin-bottom:14px}
+.tabs .t{height:32px;padding:0 14px;border:1px solid var(--line);background:#fff;border-radius:6px;display:flex;align-items:center;font-size:13px;color:var(--text-2);cursor:pointer}
+.tabs .t.on{background:var(--primary);border-color:var(--primary);color:#fff}
+.verify{background:#FBF4E6;border:1px solid #EBD3A8;border-radius:6px;padding:12px 16px;font-size:12.5px;color:#7A5416;line-height:1.8;margin-bottom:12px}
+.rp{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #EDF2F4}
+.rp .ic{width:40px;height:48px;border:1px solid #BBD3DC;border-radius:4px;background:#EEF5F7;display:grid;place-items:center;color:var(--accent);font-size:11px}
+.rp .info{flex:1}
+.rp .info h4{font-size:14px}
+.rp .info p{font-size:12px;color:var(--text-3);margin-top:3px}
+</style></head><body>
+<div class="portal-top"><div class="logo"><span style="width:18px;height:18px;border:2px solid #237A8B;border-radius:4px;display:inline-block"></span> 康检通体检中心</div>
+<div class="nav"><a>体检套餐</a><a>我的预约</a><a class="on">我的报告</a><a>体检须知</a></div>
+<div style="margin-left:auto;display:flex;align-items:center;gap:14px;font-size:13px;color:var(--text-2)">消息 <span class="avatar">张</span></div></div>
+<div class="portal-wrap">
+  <div class="tabs"><span class="t on">全部</span><span class="t">待确认 1</span><span class="t">待到检 2</span><span class="t">待报告 1</span><span class="t">待领取 1</span><span class="t">已完成 6</span></div>
+  <div class="panel" style="padding:0">
+    <table><thead><tr><th>预约编号</th><th>套餐</th><th>预约日期 / 时段</th><th>到检状态</th><th>报告状态</th><th>领取方式</th><th>更新时间</th><th>操作</th></tr></thead>
+    <tbody>
+      <tr><td class="num">AP-20261103-0012</td><td>中老年深度筛查套餐</td><td class="num">2026-11-03 07:30-09:00</td><td><span class="tag blue">待到检</span></td><td><span class="tag gray">未生成</span></td><td class="nowrap">—</td><td class="num">2026-11-01 04:50:12</td><td class="nowrap"><button class="btn link">详情</button><button class="btn link">改期</button><button class="btn link">取消</button></td></tr>
+      <tr><td class="num">AP-20261020-0088</td><td>中青年常规体检 A</td><td class="num">2026-10-20 09:00-10:30</td><td><span class="tag green">已到检</span></td><td><span class="tag orange">待领取</span></td><td class="nowrap">本人下载</td><td class="num">2026-10-22 15:11:40</td><td class="nowrap"><button class="btn link">查看报告</button><button class="btn link">授权下载</button></td></tr>
+      <tr><td class="num">AP-20260915-0041</td><td>女性专项筛查套餐</td><td class="num">2026-09-15 07:30-09:00</td><td><span class="tag green">已到检</span></td><td><span class="tag green">已完成</span></td><td class="nowrap">现场领取</td><td class="num">2026-09-18 10:02:31</td><td class="nowrap"><button class="btn link">查看报告</button><button class="btn link">领取记录</button></td></tr>
+      <tr><td class="num">AP-20260802-0017</td><td>入职体检基础套餐</td><td class="num">2026-08-02 10:30-11:30</td><td><span class="tag green">已到检</span></td><td><span class="tag green">已完成</span></td><td class="nowrap">委托代领</td><td class="num">2026-08-04 09:31:08</td><td class="nowrap"><button class="btn link">查看报告</button><button class="btn link">代领登记</button></td></tr>
+    </tbody></table>
+    <div class="pager" style="padding:14px 16px"><span>共 11 条</span><span class="pg">‹</span><span class="pg on">1</span><span class="pg">2</span><span class="pg">›</span></div>
+  </div>
+
+  <div class="panel" style="margin-top:16px">
+    <div class="panel-h"><h3>报告领取中心</h3><div class="sub">报告文件不暴露真实路径，下载需二次身份校验</div></div>
+    <div class="verify">为保护个人隐私，在线下载报告前需再次输入身份证后 6 位。每次下载均记录访问日志（时间、IP、操作人）。</div>
+    <div class="rp"><div class="ic">PDF</div><div class="info"><h4>体检报告（终版）· 2026-10-20 中青年常规体检 A</h4><p>签发日期 2026-10-22 · 版本 V2（最新有效）· 总检医师 李国强</p></div>
+      <span class="tag green">已完成</span><button class="btn ghost">身份校验并下载</button></div>
+    <div class="rp"><div class="ic">PDF</div><div class="info"><h4>体检报告 · 2026-09-15 女性专项筛查套餐</h4><p>签发日期 2026-09-18 · 版本 V1 · 已于 2026-09-18 现场领取</p></div>
+      <span class="tag gray">已归档</span><button class="btn">查看领取记录</button></div>
+    <div style="margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+      <div style="border:1px solid var(--line);border-radius:6px;padding:12px"><div style="font-size:12px;color:var(--text-3)">本人下载</div><div style="font-size:13px;margin-top:4px">8 次 · 最近 2026-10-22</div></div>
+      <div style="border:1px solid var(--line);border-radius:6px;padding:12px"><div style="font-size:12px;color:var(--text-3)">现场领取</div><div style="font-size:13px;margin-top:4px">1 次 · 2026-09-18</div></div>
+      <div style="border:1px solid var(--line);border-radius:6px;padding:12px"><div style="font-size:12px;color:var(--text-3)">委托代领</div><div style="font-size:13px;margin-top:4px">1 次 · 2026-08-04</div></div>
+    </div>
+  </div>
+</div>
+</body></html>

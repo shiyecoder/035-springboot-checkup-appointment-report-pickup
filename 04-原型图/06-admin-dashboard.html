@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>体检运营看板</title><link rel="stylesheet" href="mock.css">
+<style>
+body{overflow:hidden}
+.content{padding:18px 24px}
+.mini{display:flex;gap:8px}
+.legend{display:flex;gap:12px;font-size:11.5px;color:var(--text-3);justify-content:center;margin-top:8px;flex-wrap:wrap}
+.legend i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px}
+.rank li{list-style:none;display:flex;align-items:center;gap:8px;font-size:12.5px;padding:6px 0}
+.rank .b{flex:1;height:6px;background:#EDF2F4;border-radius:3px;overflow:hidden}
+.rank .b i{display:block;height:100%;background:var(--secondary)}
+.dash{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:12px}
+.row2{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-bottom:12px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.panel{padding:12px 14px}
+.panel-h{margin-bottom:8px}
+.panel-h h3{font-size:13px}
+.metric{padding:10px 12px}
+.metric .v{font-size:20px;margin-top:2px}
+.bars{height:96px}
+</style></head><body>
+<div class="layout">
+  <aside class="side">
+    <div class="brand"><span class="dot"></span> 体健康教育管理</div>
+    <nav>
+      <div class="grp">概览</div><a class="on"><span class="ico">▤</span> 运营看板</a>
+      <div class="grp">主数据</div>
+      <a><span class="ico">◇</span> 体检套餐</a><a><span class="ico">◈</span> 检查项目</a>
+      <a><span class="ico">▣</span> 时段容量</a><a><span class="ico">◉</span> 体检机构</a>
+      <div class="grp">业务</div>
+      <a><span class="ico">▷</span> 预约管理</a><a><span class="ico">◎</span> 团检管理</a>
+      <a><span class="ico">▦</span> 报告归档</a><a><span class="ico">◐</span> 报告领取</a>
+      <div class="grp">创新模块</div>
+      <a><span class="ico">⚙</span> 拥挤度规则</a><a><span class="ico">▥</span> 计算留痕</a>
+      <div class="grp">系统</div>
+      <a><span class="ico">☰</span> 菜单管理</a><a><span class="ico">◫</span> 角色管理</a><a><span class="ico">☺</span> 用户管理</a>
+    </nav>
+  </aside>
+  <div class="main">
+    <div class="top"><div class="crumb">概览 / <b>运营看板</b></div>
+      <div class="right"><span>2026-11-01 ~ 2026-11-30</span><span>消息 12</span><span class="avatar">管</span></div></div>
+    <div class="content">
+      <div class="dash">
+        <div class="metric"><div class="k">预约人数</div><div class="v">1,286</div><div class="d up">较上月 +8.4%</div></div>
+        <div class="metric"><div class="k">到检率</div><div class="v">91.2%</div><div class="d up">较上月 +2.1pt</div></div>
+        <div class="metric"><div class="k">平均等待时长</div><div class="v">34<span style="font-size:12px"> 分</span></div><div class="d">较上月 -6 分</div></div>
+        <div class="metric"><div class="k">报告完成时效</div><div class="v">2.8<span style="font-size:12px"> 天</span></div><div class="d up">达标（≤3 天）</div></div>
+        <div class="metric"><div class="k">套餐销量</div><div class="v">842</div><div class="d">共 16 个在架套餐</div></div>
+        <div class="metric"><div class="k">科室负荷</div><div class="v">76%</div><div class="d">影像科最高 89%</div></div>
+      </div>
+      <div class="row2">
+        <div class="panel"><div class="panel-h"><h3>预约与到检趋势</h3><div class="sub">近 30 天</div></div>
+          <div class="line-chart"><svg viewBox="0 0 600 150" preserveAspectRatio="none">
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#237A8B" stop-opacity=".28"/><stop offset="1" stop-color="#237A8B" stop-opacity="0"/></linearGradient></defs>
+            <path d="M0 110 L50 96 L100 104 L150 78 L200 88 L250 62 L300 70 L350 48 L400 58 L450 40 L500 46 L550 30 L600 36 L600 150 L0 150Z" fill="url(#g1)"/>
+            <path d="M0 110 L50 96 L100 104 L150 78 L200 88 L250 62 L300 70 L350 48 L400 58 L450 40 L500 46 L550 30 L600 36" fill="none" stroke="#237A8B" stroke-width="2"/>
+            <path d="M0 128 L50 120 L100 124 L150 104 L200 112 L250 92 L300 98 L350 82 L400 90 L450 74 L500 80 L550 66 L600 70" fill="none" stroke="#15344A" stroke-width="1.6" stroke-dasharray="4 3"/>
+          </svg></div>
+          <div class="legend"><span><i style="background:#237A8B"></i>预约量</span><span><i style="background:#15344A"></i>实际到检</span></div>
+        </div>
+        <div class="panel"><div class="panel-h"><h3>预约状态分布</h3></div>
+          <div class="donut"></div>
+          <div class="legend"><span><i style="background:#15344A"></i>待缴费</span><span><i style="background:#237A8B"></i>待到检</span><span><i style="background:#7FA9B4"></i>待领取</span><span><i style="background:#C9D8DE"></i>已完成</span></div>
+        </div>
+      </div>
+      <div class="row3">
+        <div class="panel"><div class="panel-h"><h3>套餐销量 Top5</h3></div>
+          <ul class="rank">
+            <li><span style="width:74px">入职基础</span><div class="b"><i style="width:92%"></i></div><span class="num">218</span></li>
+            <li><span style="width:74px">中青年 A</span><div class="b"><i style="width:74%"></i></div><span class="num">176</span></li>
+            <li><span style="width:74px">女性专项</span><div class="b"><i style="width:58%"></i></div><span class="num">139</span></li>
+            <li><span style="width:74px">中老年深度</span><div class="b"><i style="width:46%"></i></div><span class="num">111</span></li>
+            <li><span style="width:74px">团检基础</span><div class="b"><i style="width:34%"></i></div><span class="num">82</span></li>
+          </ul></div>
+        <div class="panel"><div class="panel-h"><h3>时段容量利用</h3></div>
+          <div class="bars"><div class="b" style="height:58%"><span>07:30</span></div><div class="b" style="height:81%"><span>09:00</span></div><div class="b" style="height:94%;background:linear-gradient(180deg,#C9615F,#B03035)"><span>10:30</span></div><div class="b" style="height:47%"><span>13:30</span></div><div class="b" style="height:36%"><span>15:00</span></div></div>
+          <div style="height:16px"></div></div>
+        <div class="panel"><div class="panel-h"><h3>项目漏检 / 补检</h3></div>
+          <div class="bars"><div class="b" style="height:70%;background:linear-gradient(180deg,#3E8FA0,#237A8B)"><span>彩超</span></div><div class="b" style="height:44%"><span>CT</span></div><div class="b" style="height:26%"><span>心电</span></div><div class="b" style="height:16%"><span>肺功</span></div><div class="b" style="height:9%"><span>骨密度</span></div></div>
+          <div style="height:16px"></div></div>
+      </div>
+      <div class="row3" style="margin-top:12px">
+        <div class="panel" style="grid-column:span 2"><div class="panel-h"><h3>创新模块 · 拥挤度推荐效果</h3><div class="sub">规则版本 v3 · 生效 2026-10-01</div><div class="right"><span class="tag green">推荐采纳率 68.4%</span><span class="tag orange">人工调整率 9.7%</span></div></div>
+          <div style="display:flex;gap:24px;font-size:12.5px;color:var(--text-2)">
+            <div>本月计算<span class="num" style="color:var(--text);margin-left:6px">1,204 次</span></div>
+            <div>采纳推荐时段<span class="num" style="color:var(--text);margin-left:6px">824 次</span></div>
+            <div>平均等待下降<span class="num" style="color:var(--success);margin-left:6px">6.2 分钟</span></div>
+            <div>调整原因集中于「时间不便」<span class="num" style="color:var(--text);margin-left:6px">41 条</span></div>
+          </div>
+        </div>
+        <div class="panel"><div class="panel-h"><h3>报告时效</h3></div>
+          <table><tbody><tr><td>已签发</td><td class="num" style="text-align:right">318</td></tr><tr><td>超 3 天未签发</td><td class="num" style="text-align:right;color:var(--danger)">7</td></tr><tr><td>待领取</td><td class="num" style="text-align:right">62</td></tr><tr><td>已领取</td><td class="num" style="text-align:right">256</td></tr></tbody></table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

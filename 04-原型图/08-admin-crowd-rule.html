@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>拥挤度规则配置与计算留痕</title><link rel="stylesheet" href="mock.css">
+<style>
+.w-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}
+.wrow{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px dashed #EDF2F4;font-size:13px}
+.wrow .n{width:120px;color:var(--text-2)}
+.wrow .inp{width:110px;height:30px;text-align:right;font-family:var(--mono)}
+.wrow .tip{font-size:11.5px;color:var(--text-3);flex:1}
+.total{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:13px}
+.snap{font-family:var(--mono);font-size:11.5px;background:#F7FAFB;border:1px solid var(--line);border-radius:6px;padding:10px 12px;color:var(--text-2);line-height:1.9;white-space:pre-wrap}
+.ver{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #EDF2F4;font-size:12.5px}
+</style></head><body>
+<div class="layout">
+  <aside class="side">
+    <div class="brand"><span class="dot"></span> 体健康教育管理</div>
+    <nav>
+      <div class="grp">概览</div><a><span class="ico">▤</span> 运营看板</a>
+      <div class="grp">主数据</div><a><span class="ico">◇</span> 体检套餐</a><a><span class="ico">◈</span> 检查项目</a><a><span class="ico">▣</span> 时段容量</a><a><span class="ico">◉</span> 体检机构</a>
+      <div class="grp">业务</div><a><span class="ico">▷</span> 预约管理</a><a><span class="ico">◎</span> 团检管理</a><a><span class="ico">▦</span> 报告归档</a><a><span class="ico">◐</span> 报告领取</a>
+      <div class="grp">创新模块</div><a class="on"><span class="ico">⚙</span> 拥挤度规则</a><a><span class="ico">▥</span> 计算留痕</a>
+      <div class="grp">系统</div><a><span class="ico">☰</span> 菜单管理</a><a><span class="ico">◫</span> 角色管理</a><a><span class="ico">☺</span> 用户管理</a>
+    </nav>
+  </aside>
+  <div class="main">
+    <div class="top"><div class="crumb">创新模块 / <b>拥挤度规则</b></div><div class="right"><span>当前生效版本 v3</span><span class="avatar">管</span></div></div>
+    <div class="content">
+      <div class="panel" style="margin-bottom:16px">
+        <div class="panel-h"><h3>权重配置</h3><div class="sub">权重合计必须等于 100%，保存后生成新版本并记录生效时间</div>
+          <div class="right"><button class="btn">恢复默认</button><button class="btn ghost">预览计算</button><button class="btn primary">保存为新版本</button></div></div>
+        <div class="w-grid">
+          <div>
+            <div class="wrow"><span class="n">科室容量</span><input class="input inp" value="22"><span class="tip">各科室当日最大接待量与已排班医生数</span></div>
+            <div class="wrow"><span class="n">项目组合</span><input class="input inp" value="18"><span class="tip">套餐项目跨科室数量与串科室次数</span></div>
+            <div class="wrow"><span class="n">时段预约量</span><input class="input inp" value="20"><span class="tip">该时段已锁号人数 / 名额上限</span></div>
+            <div class="wrow"><span class="n">预计时长</span><input class="input inp" value="14"><span class="tip">套餐项目执行时长合计</span></div>
+            <div class="wrow"><span class="n">历史到检率</span><input class="input inp" value="16"><span class="tip">近 90 天同时段到检率，越高越拥挤</span></div>
+            <div class="wrow"><span class="n">设备停用情况</span><input class="input inp" value="10"><span class="tip">涉及设备停用则加权惩罚</span></div>
+            <div class="total"><span style="color:var(--text-2)">合计</span><b class="num" style="font-size:16px;color:var(--success)">100%</b>
+              <span style="color:var(--text-3);font-size:12px">阈值：≤40 推荐 / 41-70 一般 / &gt;70 不推荐</span></div>
+          </div>
+          <div>
+            <div style="font-size:12.5px;color:var(--text-2);margin-bottom:8px">版本历史</div>
+            <div class="ver"><span class="tag green">生效中</span><b>v3</b><span style="color:var(--text-3)">2026-10-01 00:00</span><span style="margin-left:auto">王管理</span></div>
+            <div class="ver"><span class="tag gray">历史</span><b>v2</b><span style="color:var(--text-3)">2026-07-01 00:00</span><span style="margin-left:auto">王管理</span></div>
+            <div class="ver"><span class="tag gray">历史</span><b>v1</b><span style="color:var(--text-3)">2026-04-01 00:00</span><span style="margin-left:auto">系统初始化</span></div>
+            <div style="font-size:12px;color:var(--text-3);margin-top:12px;line-height:1.8">修改权重只影响新产生的计算与主动重算的数据，历史留痕不回溯。</div>
+          </div>
+        </div>
+      </div>
+      <div class="w-grid">
+        <div class="panel">
+          <div class="panel-h"><h3>计算留痕</h3><div class="sub">输入快照 + 明细分 + 规则版本，可复算校验</div>
+            <div class="right"><button class="btn sm">按规则重算</button><button class="btn sm">导出</button></div></div>
+          <table><thead><tr><th>计算编号</th><th>预约编号</th><th>时段</th><th>总分</th><th>结果</th><th>规则</th><th>生成时间</th><th>人工调整</th></tr></thead>
+          <tbody>
+            <tr><td class="num">CS-20261101-0037</td><td class="num">AP-20261103-0012</td><td class="num">07:30-09:00</td><td class="num">38.4</td><td><span class="tag green">推荐</span></td><td class="num">v3</td><td class="num">2026-11-01 04:50:12</td><td>—</td></tr>
+            <tr><td class="num">CS-20261101-0038</td><td class="num">AP-20261103-0013</td><td class="num">09:00-10:30</td><td class="num">76.2</td><td><span class="tag orange">一般</span></td><td class="num">v3</td><td class="num">2026-11-01 04:51:03</td><td>—</td></tr>
+            <tr><td class="num">CS-20261031-0036</td><td class="num">AP-20261102-0008</td><td class="num">10:30-11:30</td><td class="num">94.1</td><td><span class="tag red">不推荐</span></td><td class="num">v3</td><td class="num">2026-10-31 16:22:38</td><td><span class="tag blue">已调整 88</span></td></tr>
+            <tr><td class="num">CS-20261031-0035</td><td class="num">AP-20261102-0007</td><td class="num">07:30-09:00</td><td class="num">41.6</td><td><span class="tag orange">一般</span></td><td class="num">v2</td><td class="num">2026-10-31 15:04:11</td><td>—</td></tr>
+          </tbody></table>
+          <div class="pager"><span>共 1,204 条</span><span class="pg">‹</span><span class="pg on">1</span><span class="pg">2</span><span class="pg">›</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-h"><h3>快照明细 · CS-20261101-0037</h3></div>
+          <div class="snap">{"ruleVersion":"v3","slotId":1042,"appointmentId":3312,
+ "inputs":{"deptCapacity":0.38,"itemMix":0.62,"slotLoad":0.38,
+           "duration":0.70,"arrivalRate":0.81,"deviceDown":0.0},
+ "weights":{"deptCapacity":22,"itemMix":18,"slotLoad":20,
+            "duration":14,"arrivalRate":16,"deviceDown":10},
+ "scores":{"38.0","62.0","38.0","70.0","81.0","0.0"},
+ "total":38.4,"level":"推荐","missing":[],
+ "generatedAt":"2026-11-01 04:50:12"}</div>
+          <div style="margin-top:14px;font-size:12.5px;color:var(--text-2);line-height:1.9">
+            <b style="color:var(--text)">结果解释</b><br>
+            主要影响因素：历史到检率 81（权重 16）、预计时长 70（权重 14）<br>
+            未满足条件：无<br>
+            可改进项：影像科 DR 单机运行，建议提前 10 分钟到检
+          </div>
+          <div style="border-top:1px solid var(--line);margin-top:12px;padding-top:12px">
+            <div style="font-size:12.5px;color:var(--text-2);margin-bottom:8px">人工调整（需填写原因，原始结果不覆盖）</div>
+            <div style="display:flex;gap:8px"><input class="input" style="flex:1" placeholder="调整原因，不少于 5 个字"><button class="btn ghost">提交调整</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

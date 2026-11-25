@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>到检执行台</title><link rel="stylesheet" href="mock.css">
+<style>
+.scan{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin-bottom:16px}
+.scan .inp{height:38px;flex:1;border:1px solid var(--secondary);border-radius:6px;display:flex;align-items:center;padding:0 12px;color:var(--text-3);font-size:13px}
+.head{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-bottom:16px}
+.head .l1{display:flex;align-items:center;gap:12px}
+.head .l1 b{font-size:16px;color:var(--primary);font-family:var(--mono)}
+.head .l2{display:flex;gap:36px;margin-top:14px;font-size:12.5px;color:var(--text-2);flex-wrap:wrap}
+.head .l2 div span{color:var(--text);margin-left:6px}
+.prog{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.pi{border:1px solid var(--line);border-radius:6px;padding:11px 13px}
+.pi .h{display:flex;align-items:center;justify-content:space-between}
+.pi .h b{font-size:13px}
+.pi .m{font-size:12px;color:var(--text-3);margin-top:5px}
+</style></head><body>
+<div class="layout">
+  <aside class="side">
+    <div class="brand"><span class="dot"></span> 体检中心工作台</div>
+    <nav>
+      <div class="grp">前台工作</div>
+      <a class="on"><span class="ico">▣</span> 到检执行台</a>
+      <a><span class="ico">¥</span> 收费登记</a>
+      <a><span class="ico">▤</span> 预约审核</a>
+      <a><span class="ico">⎙</span> 指引单补打</a>
+      <div class="grp">报告</div>
+      <a><span class="ico">▦</span> 报告交付</a>
+      <a><span class="ico">↺</span> 补检登记</a>
+    </nav>
+  </aside>
+  <div class="main">
+    <div class="top"><div class="crumb">前台工作 / <b>到检执行台</b></div>
+      <div class="right"><span>消息 3</span><span>前台 · 王敏</span><span class="avatar">王</span></div></div>
+    <div class="content">
+      <div class="scan">
+        <div class="inp">扫描预约码 / 输入预约编号或身份证后 6 位</div>
+        <button class="btn primary">核验并签到</button>
+        <button class="btn">手动检索</button>
+      </div>
+      <div class="head">
+        <div class="l1"><b>AP-20261103-0012</b><span class="tag blue">待到检</span><span class="tag gray">个人预约</span>
+          <div style="margin-left:auto;display:flex;gap:8px"><button class="btn ghost">补打指引单</button><button class="btn primary">确认到检</button><button class="btn danger">取消预约</button></div></div>
+        <div class="l2">
+          <div>体检人<span>张伟</span></div><div>性别 / 年龄<span>男 / 58</span></div>
+          <div>手机<span>138****6621</span></div><div>套餐<span>中老年深度筛查套餐</span></div>
+          <div>时段<span>2026-11-03 07:30-09:00</span></div><div>缴费<span class="tag green">已收 ¥1280.00</span></div>
+          <div>负责前台<span>王敏</span></div>
+        </div>
+      </div>
+      <div class="panel" style="margin-bottom:16px">
+        <div class="panel-h"><h3>项目执行进度</h3><div class="sub">共 26 项 · 已检 12 · 待检 11 · 放弃 2 · 需补检 1</div>
+          <div class="right"><button class="btn sm">批量标记已检</button><button class="btn sm">登记补检</button></div></div>
+        <div class="prog">
+          <div class="pi"><div class="h"><b>血常规</b><span class="tag green">已检</span></div><div class="m">检验科 · 07:42</div></div>
+          <div class="pi"><div class="h"><b>肝功八项</b><span class="tag green">已检</span></div><div class="m">检验科 · 07:44</div></div>
+          <div class="pi"><div class="h"><b>腹部彩超</b><span class="tag blue">检查中</span></div><div class="m">影像科 · 08:05 开始</div></div>
+          <div class="pi"><div class="h"><b>胸部 CT</b><span class="tag gray">待检</span></div><div class="m">影像科 · 队列 3 人</div></div>
+          <div class="pi"><div class="h"><b>颈动脉彩超</b><span class="tag gray">待检</span></div><div class="m">影像科 · 队列 5 人</div></div>
+          <div class="pi"><div class="h"><b>心电图</b><span class="tag orange">需补检</span></div><div class="m">设备故障 · 建议 11-05 补检</div></div>
+          <div class="pi"><div class="h"><b>肺功能</b><span class="tag gray">放弃</span></div><div class="m">体检人自愿放弃 · 已签字</div></div>
+          <div class="pi"><div class="h"><b>骨密度</b><span class="tag gray">放弃</span></div><div class="m">体检人自愿放弃 · 已签字</div></div>
+        </div>
+      </div>
+      <div class="grid g2">
+        <div class="panel"><div class="panel-h"><h3>操作时间轴</h3></div>
+          <ul class="tl">
+            <li><div class="t">2026-11-01 04:50:12</div><div class="b">用户提交预约，锁定 07:30-09:00 名额 1 个</div></li>
+            <li><div class="t">2026-11-01 05:02:40</div><div class="b">前台王敏审核通过，状态 待确认 → 待缴费</div></li>
+            <li><div class="t">2026-11-02 09:18:03</div><div class="b">收费登记：应收 1280.00，减免 0.00，实收 1280.00（微信）</div></li>
+            <li><div class="t">2026-11-03 07:38:21</div><div class="b">核验预约码成功，状态 待到检 → 体检中</div></li>
+            <li><div class="t">2026-11-03 08:41:09</div><div class="b">心电图设备故障，登记为需补检</div></li>
+          </ul>
+        </div>
+        <div class="panel"><div class="panel-h"><h3>今日时段负载</h3><div class="sub">2026-11-03 上午</div></div>
+          <table><thead><tr><th>时段</th><th>个人 / 团体</th><th>已到检</th><th>负载</th></tr></thead><tbody>
+            <tr><td class="num">07:30-09:00</td><td class="num">50 / 20</td><td class="num">41</td><td><span class="tag green">58%</span></td></tr>
+            <tr><td class="num">09:00-10:30</td><td class="num">50 / 20</td><td class="num">57</td><td><span class="tag orange">81%</span></td></tr>
+            <tr><td class="num">10:30-11:30</td><td class="num">30 / 10</td><td class="num">37</td><td><span class="tag red">93%</span></td></tr>
+          </tbody></table>
+          <div style="font-size:12px;color:var(--text-3);margin-top:10px">10:30 时段剩余名额 3 个，已暂停线上放号。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>
